@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Game Pak Bepe</title>
+</head>
+
+<body>
+    {% load humanize %}
+    <h1>All Games</h1>
+    <ul>
+        {% for product in products %}
+        <li>
+            <a href="/game/{{ product.id }}">{{ product.name }}</a>
+            <p>Rp.{{product.price|intcomma}}</p>
+            <p>Sisa {{product.amount}}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
