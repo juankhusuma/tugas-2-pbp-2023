@@ -1,0 +1,154 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+:root {
+    --accent-color: #6abf40;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-family: monospace;
+	vertical-align: baseline;
+    text-decoration: none;
+    color: unset;
+    display: unset;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+    background: #000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+    flex-direction: column;
+}
+
+.navbar__nav ul {
+    font-size: 1.1rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar__nav > ul > a {
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #ddd;
+}
+
+.navbar__nav {
+    padding: 5px;
+}
+
+.navbar__nav > ul > a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.navbar__hero img {
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+}
+
+.navbar__hero {
+    background: #555;
+    display: flex;
+    padding: 10px 40px;
+}
+
+.navbar__hero-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    row-gap: 20px;
+}
+
+.navbar__hero-banner h1, .navbar__hero-banner h2 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar__hero-banner h3 {
+    color: #ddd;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 5px 10px;
+        margin: 0;
+    }
+
+    .navbar__hero {
+        width: 100%;
+    }
+
+    .navbar__hero {
+        flex-direction: column;
+        align-items: center;
+    }
+ 
+    .navbar__hero img {
+        width: 100px;
+    }
+ 
+    .navbar__hero h1, .navbar__hero h2 {
+        font-size: 1rem;
+    }
+
+    .navbar__hero-banner {
+        align-items: center;
+        text-align: center;
+    }
+}

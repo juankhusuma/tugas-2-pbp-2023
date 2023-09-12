@@ -1,24 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toko Game Pak Bepe</title>
-</head>
-
-<body>
-    {% load humanize %}
-    <h1>All Games</h1>
-    <ul>
-        {% for product in products %}
-        <li>
-            <a href="/game/{{ product.id }}">{{ product.name }}</a>
+{% extends "layout.html" %}
+{% load static %}
+{% load humanize %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock css %}
+{% block content %}
+<h1>All Games</h1>
+<ul class="products">
+    {% for product in products %}
+    <li class="products__item">
+        <a href="/game/{{ product.id }}">
+            <h1>
+                {{ product.name }}
+            </h1>
             <p>Rp.{{product.price|intcomma}}</p>
             <p>Sisa {{product.amount}}</p>
-        </li>
-        {% endfor %}
-    </ul>
-</body>
-
-</html>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}

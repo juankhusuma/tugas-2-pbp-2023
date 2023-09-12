@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    {% block css %}
+    {% endblock css %}
+    <title>Toko Game Pak Bepe</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <section class="navbar__hero">
+            <img src="{% static 'img/cbkatak.png' %}" width="150px" alt="cbkatak">
+            <div class="navbar__hero-banner">
+                <h1>Toko Game Pak Bepe</h1>
+                <h2>C. BinKatak --- Bersama, Berhad.</h2>
+                <h3>Juan Dharmananda Khusuma --- PBP D</h3>
+            </div>
+        </section>
+        <section class="navbar__nav">
+            <ul>
+                <a href="/">Home</a>
+                <a href="/game">Game</a>
+                <a href="/game/add">Add Game</a>
+                <a href="/game/transaction">Transaction</a>
+            </ul>
+        </section>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+</body>
+
+</html>
