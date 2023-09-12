@@ -20,3 +20,17 @@ Browser pada perangkat pengguna akan mengirimkan sebuah HTTP request ke server d
 Untuk mengisolasi suatu projek dengan projek lainya, dimana modul-modul yang diinstall oleh pip di suatu projek terpisah dengan projek lain, selain itu setiap projek dengan virtual enviromentnya masing-masing dapat menggunakan versi yang berbeda dari suatu modul, hal ini dimungkinkan oleh isolasi yang dilakukan oleh virtual environment.
 
 ## 4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
+MVC membagi kode-kode pada suatu projek menjadi:
+- Model: bagian yang berhubungan dengan pemrosesan data serta interaksi dengan database
+- View: bagian yang berhubungan dengan tampilan yang disajikan ke pengguna
+- Controller: bagian yang menghubungkan model dan view menjadi suatu kesatuan serta melakukan routing dan request handling
+
+MVT membagi kode-kode pada suatu projek menjadi:
+- Model: bagian yang berhubungan dengan pemrosesan data serta interaksi dengan database
+- View: bagian yang melakukan pemrosesan request dan memberikan response kembali terhadap request tersebut dengan melakukan rendering template
+- Template: tampilan yang akan diproses dan diberikan ke pengguna
+
+MVVM membagi kode-kode pada suatu projek menjadi:
+- Model: bagian yang berhubungan dengan pemrosesan data serta interaksi dengan database
+- View: bagian yang berhubungan dengan tampilan yang disajikan ke pengguna
+- ViewModel: menghubungkan view dengan model dan menjembatani pemrosesan data dari model hingga siap ditampilkan pada view
