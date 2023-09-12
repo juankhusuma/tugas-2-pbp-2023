@@ -86,6 +86,7 @@ body {
 
 .navbar__nav {
     padding: 5px;
+    text-transform: uppercase;
 }
 
 .navbar__nav > ul > a:hover {
