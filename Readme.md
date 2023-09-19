@@ -56,9 +56,14 @@ Karena strukturnya yang sederhana dan mirip seperti tipe data map atau object ya
 - Menambahkan tampilan pada templates beserta styling pada static/css untuk menampilkan halaman form dan juga display item pada produk
 - Menambahkan fungsi-fungsi pada views.py agar dapat menampilkan produk dalam format XML dan juga JSON, beserta menampilkan produk bedasarkan ID pada format XML dan juga JSON
 - Menambahkan views yang telah dibuat pada urls.py di app main
-
-![html](https://cdn.discordapp.com/attachments/1029736062974705746/1151738049298968638/Screenshot_787.png)
+## 5. Screenshot
+- HTML
+![html](https://media.discordapp.net/attachments/1029736062974705746/1153749675023794249/image.png?width=832&height=468)
+- JSON
 ![json](https://media.discordapp.net/attachments/1029736062974705746/1151738049571602452/Screenshot_788.png?width=832&height=468)
+- XML
 ![xml](https://media.discordapp.net/attachments/1029736062974705746/1151738049869389864/Screenshot_789.png?width=832&height=468)
+- JSON By ID
 ![json-by-id](https://media.discordapp.net/attachments/1029736062974705746/1151738050221715487/Screenshot_790.png?width=832&height=468)
+- XML By ID
 ![xml-by-id](https://media.discordapp.net/attachments/1029736062974705746/1151738050523709460/Screenshot_791.png?width=832&height=468)
