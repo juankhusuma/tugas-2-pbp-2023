@@ -1,3 +1,5 @@
+# Tugas 2
+
 ## 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 - Membuat virtual enviroment
 - Install django lalu create project inventory_app dengan django-admin pada directory sekarang menggunakan `django-admin startproject inventory_app .`
@@ -34,3 +36,24 @@ MVVM membagi kode-kode pada suatu projek menjadi:
 - Model: bagian yang berhubungan dengan pemrosesan data serta interaksi dengan database
 - View: bagian yang berhubungan dengan tampilan yang disajikan ke pengguna
 - ViewModel: menghubungkan view dengan model dan menjembatani pemrosesan data dari model hingga siap ditampilkan pada view
+
+# Tugas 3
+
+## 1. Apa perbedaan antara form ```POST``` dan form ```GET``` dalam Django?
+Form  ```POST``` pada umumnya digunakan untuk mengubah data pada server atau database selain itu form ```POST``` dapat mengirimkan data dari client/browser ke server, misal saat ingin mengirim input user ke server untuk disimpan pada database, sedangkan form ```GET``` umumnya digunakan untuk mengambil data dari server ke client dan tidak mengirimkan data apapun ke server melainkan untuk meminta data agar dikirimkan dari server ke client/browser
+
+## 2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+- HTML: Berupa definisi kerangka dan struktur dari suatu halaman web beserta tampilan dan juga data yang ditampilkan pada halaman web tersebut, namun HTML tidak dikembangkan untuk  pengiriman data, melainkan untuk menampilkan data secara rapi kepada pengguna.
+- XML: Merupakan suatu _markup language_ untuk menyimpan dan mengirimkan data, XML besifat generic dimana pengguna dapat mendefisikan _tag_ dan struktur sendiri, umumnya XML berguna untuk pengiriman data yang bersifat kompleks.
+- JSON: Merupakan format pengiriman data yang ringan dan sederhana dimana formatnya mirip seperti _dictionary_ atau _object_ pada Python dan JavaScript yang berisi _key value pair_ sehingga mudah diproses oleh mesin dan manusia, selain itu ukuranya cenderung lebih kecil dibandingkan dengan HTML dan XML.
+
+## 3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern
+Karena strukturnya yang sederhana dan mirip seperti tipe data map atau object yang umumnya ada pada bahasa pemrograman modern dan dapat digunakan oleh berbagai bahasa pemrograman, sehingga mudah diproses oleh mesin dan mudah untuk membuat program yang mengubah dari data ke JSON atau sebaliknya, selain itu dikarenakan strukturnya yang sederhana, data JSON umumnya lebih ringan dan kecil dibanding format lainya.
+
+## 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+![html](https://cdn.discordapp.com/attachments/1029736062974705746/1151738049298968638/Screenshot_787.png)
+![json](https://media.discordapp.net/attachments/1029736062974705746/1151738049571602452/Screenshot_788.png?width=832&height=468)
+![xml](https://media.discordapp.net/attachments/1029736062974705746/1151738049869389864/Screenshot_789.png?width=832&height=468)
+![json-by-id](https://media.discordapp.net/attachments/1029736062974705746/1151738050221715487/Screenshot_790.png?width=832&height=468)
+![xml-by-id](https://media.discordapp.net/attachments/1029736062974705746/1151738050523709460/Screenshot_791.png?width=832&height=468)

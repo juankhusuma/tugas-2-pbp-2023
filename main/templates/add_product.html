@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/add_product.css' %}">
+{% endblock %}
+
+{% block content %}
+<form class="create-form" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Add Product">
+</form>
+{% endblock %}

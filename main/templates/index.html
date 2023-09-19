@@ -2,11 +2,16 @@
 {% load static %}
 {% load humanize %}
 {% block css %}
-<link rel="stylesheet" href="https://cdn.discordapp.com/attachments/1029736062974705746/1151175108673675356/index.css">
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock css %}
 {% block content %}
-<h1>All Games</h1>
 <ul class="products">
+    <h1 class="stock">
+        Tersedia {{ products|length }} game
+    </h1>
+    <h1 class="stock">
+        Total stok {{ stocks }} item
+    </h1>
     {% for product in products %}
     <li class="products__item">
         <a href="#">
