@@ -51,6 +51,11 @@ Form  ```POST``` pada umumnya digunakan untuk mengubah data pada server atau dat
 Karena strukturnya yang sederhana dan mirip seperti tipe data map atau object yang umumnya ada pada bahasa pemrograman modern dan dapat digunakan oleh berbagai bahasa pemrograman, sehingga mudah diproses oleh mesin dan mudah untuk membuat program yang mengubah dari data ke JSON atau sebaliknya, selain itu dikarenakan strukturnya yang sederhana, data JSON umumnya lebih ringan dan kecil dibanding format lainya.
 
 ## 4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+- Membuat forms.py lalu mendefinisikan ProductForm untuk handling submission form pada model Product
+- Menambahkan fungsi add_product untuk handling submit form sekaligus untuk menampilkan halaman form untuk menambahkan produk
+- Menambahkan tampilan pada templates beserta styling pada static/css untuk menampilkan halaman form dan juga display item pada produk
+- Menambahkan fungsi-fungsi pada views.py agar dapat menampilkan produk dalam format XML dan juga JSON, beserta menampilkan produk bedasarkan ID pada format XML dan juga JSON
+- Menambahkan views yang telah dibuat pada urls.py di app main
 
 ![html](https://cdn.discordapp.com/attachments/1029736062974705746/1151738049298968638/Screenshot_787.png)
 ![json](https://media.discordapp.net/attachments/1029736062974705746/1151738049571602452/Screenshot_788.png?width=832&height=468)

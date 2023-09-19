@@ -12,16 +12,19 @@
     <h1 class="stock">
         Total stok {{ stocks }} item
     </h1>
-    {% for product in products %}
-    <li class="products__item">
-        <a href="#">
-            <h1>
-                {{ product.name }}
-            </h1>
-            <p>Rp.{{product.price|intcomma}}</p>
-            <p>Sisa {{product.amount}}</p>
-        </a>
-    </li>
-    {% endfor %}
+    <table>
+        <tr class="products__header">
+            <th>Game</th>
+            <th>Harga</th>
+            <th>Stok</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>Rp.{{product.price|intcomma}}</td>
+            <td>{{ product.amount }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </ul>
 {% endblock content %}
