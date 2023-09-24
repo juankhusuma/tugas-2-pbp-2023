@@ -1,19 +1,79 @@
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, logout, login
+from django.shortcuts import redirect
+from django.http import HttpResponse
+from django.contrib import messages
 from django.core import serializers
 from django.shortcuts import render
-from django.http import HttpResponse
 from main.forms import ProductForm
 from main.models import Product
 from functools import reduce
-
 # Create your views here.
 
+@login_required(login_url='main:login')
+def increment(request, id):
+    if request.method == 'POST':
+        product = Product.objects.get(pk=id)
+        product.amount += 1
+        product.save()
+    return redirect('main:index')
 
+@login_required(login_url='main:login')
+def decrement(request, id):
+    if request.method == 'POST':
+        product = Product.objects.get(pk=id)
+        product.amount -= 1
+        product.save()
+    return redirect('main:index')
+
+@login_required(login_url='main:login')
+def delete(request, id):
+    if request.method == 'POST':
+        product = Product.objects.get(pk=id)
+        product.delete()
+    return redirect('main:index')
+
+@login_required(login_url='main:login')
 def index(request):
     products = Product.objects.all()
     stocks = reduce(lambda x, y: x + y,
                     [product.amount for product in products])
-    return render(request, 'index.html', {'products': products, 'stocks': stocks})
+    context = {
+        'products': products, 
+        'stocks': stocks,
+        'last_login': request.COOKIES.get('last_login')
+    }
+    return render(request, 'index.html', context=context)
 
+
+def register(request):
+    form = UserCreationForm()
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid() and request.method == 'POST':
+            form.save()
+            messages.success(request, 'Account created successfully')
+            return redirect('main:login')
+    context = {'form': form}
+    return render(request, 'register.html', context)
+
+def login_user(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('main:index')
+        else:
+            messages.info(request, 'Username OR password is incorrect')
+    context = {}
+    return render(request, 'login.html', context)
+
+def logout_user(request):
+    logout(request)
+    return redirect('main:login')
 
 def add_product(request):
     form = ProductForm(request.POST or None)

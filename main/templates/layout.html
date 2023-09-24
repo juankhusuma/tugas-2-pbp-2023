@@ -18,7 +18,11 @@
             <img src="https://cdn.discordapp.com/attachments/1029736062974705746/1151175109516730378/cbkatak.png" width="150px" alt="cbkatak">
             <div class="navbar__hero-banner">
                 <h1>Toko Game Pak Bepe</h1>
+                {% if user.is_authenticated %}
+                <h2>{{ user.get_username }} --- Bersama, Berhad.</h2>
+                {% else %}
                 <h2>C. BinKatak --- Bersama, Berhad.</h2>
+                {% endif %}
                 <h3>Juan Dharmananda Khusuma --- PBP D</h3>
             </div>
         </section>
@@ -26,6 +30,11 @@
             <ul>
                 <a href="{% url 'main:index' %}">Home</a>
                 <a href="{% url 'main:add_product' %}">Add Game</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'main:logout' %}">Logout</a>
+                {% else %}
+                <a href="{% url 'main:login' %}">Login</a>
+                {% endif %}
             </ul>
         </section>
     </nav>

@@ -12,19 +12,45 @@
     <h1 class="stock">
         Total stok {{ stocks }} item
     </h1>
-    <table>
-        <tr class="products__header">
-            <th>Game</th>
-            <th>Harga</th>
-            <th>Stok</th>
-        </tr>
-        {% for product in products %}
-        <tr>
-            <td>{{ product.name }}</td>
-            <td>Rp.{{product.price|intcomma}}</td>
-            <td>{{ product.amount }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div style="overflow-x:auto; width: 100%; max-width: 700px;">
+        <table>
+            <tr class=" products__header">
+                <th>Game</th>
+                <th>Harga</th>
+                <th>Stok</th>
+                <th>Tambahkan</th>
+                <th>Kurangi</th>
+                <th>Hapus</th>
+            </tr>
+            {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>Rp.{{product.price|intcomma}}</td>
+                <td>{{ product.amount }}</td>
+                <td style="text-align: center;">
+                    <form action="/increment/{{product.pk}}/" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="+">
+                    </form>
+                </td>
+                <td style="text-align: center;">
+                    <form action="/decrement/{{product.pk}}/" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="-">
+                    </form>
+                </td>
+                <td style="text-align: center;">
+                    <form action="/delete/{{product.pk}}/" method="post">
+                        {% csrf_token %}
+                        <input style="color: red; font-weight: bold;" type="submit" value="x">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <h1 class="stock">
+        Tanggal login: {{ last_login }}
+    </h1>
 </ul>
 {% endblock content %}

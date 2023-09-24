@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'css/create_form.css' %}">
+
+{% endblock css %}
+
+{% block content %}
+
+<form method="post" class="create-form">
+    {% csrf_token %}
+    {{ form.as_table }}
+    <input type="submit" value="Register">
+</form>
+
+{% endblock content %}

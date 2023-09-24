@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/create_form.css' %}">
+{% endblock css %}
+{% block content %}
+<form method="post" class="create-form">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username">
+    <label for="password">Password</label>
+    <input type="password" name="password">
+    <input type="submit" value="Login">
+    <p>
+        Belum punya akun? <a style="text-decoration: underline;" href="{% url 'main:register' %}">Daftar</a>
+    </p>
+</form>
+{% endblock content %}
