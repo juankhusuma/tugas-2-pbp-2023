@@ -67,3 +67,31 @@ Karena strukturnya yang sederhana dan mirip seperti tipe data map atau object ya
 ![json-by-id](https://media.discordapp.net/attachments/1029736062974705746/1151738050221715487/Screenshot_790.png?width=832&height=468)
 - XML By ID
 ![xml-by-id](https://media.discordapp.net/attachments/1029736062974705746/1151738050523709460/Screenshot_791.png?width=832&height=468)
+
+# Tugas 4
+
+## 1. Apa itu Django ```UserCreationForm```, dan jelaskan apa kelebihan dan kekurangannya?
+```UserCreationForm``` adalah sebuah _class_ yang telah disediakan oleh Django _framework_ untuk mempermudah pembuatan form pendaftaran pengguna. 
+- Kelebihan: mempermudah pembuatan dan pemrosesan form untuk pembuatan atau registrasi pengguna
+- Kekurangan: sulit untuk di kostumisasi jika aplikasi membutuhkan alur atau data registrasi yang berbeda dengan yang terdapat pada ```UserCreationForm```
+## 2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+- Autentikasi adalah proses verifikasi pengguna untuk memastikan keaslian dari pengguna tersebut dan memastikan bahwa pengguna yang sedang melakukan _request_ sesuai dengan klaim yang dibuat.
+- Otorisasi adalah proses untuk memastikan pengguna tidak mengakses _resource_ atau melakukan aksi yang seharusnya tidak dapat dilakukan atau diakses oleh pengguna tersebut, singkatnya otorisasi menentukan serta membatasi hak dari suatu pengguna mengenai apa yang dapat diakses atau dilakukan.
+Kedua aspek ini penting dikarenakan autentikasi dan otorisasi membatasi dan mencegah data-data agar tidak diakses oleh pihak yang tidak seharusnya memiliki akses terhadap data tersebut agar tidak disalahgunakan.
+## 3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+_cookies_ adalah sebuah media penyimpanan pada suatu peramban internet yang berukuran ~5KB. _Cookies_ digunakan oleh Django dalam proses autentikasinya, dimana Django menggunakan _session based authentication_ yaitu ketika pengguna berhasil di autentikasi, Django akan membuat suatu token sesi sebagai identifikasi unik dari pengguna tersebut dan disimpan oleh _server_ pada _database_ lalu Django akan juga akan menyimpan _session_ tersebut pada _cookie_ di peramban internet dimana masa kadaluwarsa dari _cookie_ tersebut dapat disesuaikan dan selama _cookie_ yang menyimpan _session id_ dari pengguna masih valid dan belum kadaluwarsa, mana pengguna akan dianggap terautentikasi. 
+## 4. Apakah penggunaan _cookies_ aman secara _default_ dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+Secara _default_ tanpa proteksi apapun, _cookies_ rentan terhadap serangan, salah satunya ialah CSRF (_Cross Site Request Forgery_), dimana suatu _website_ lain melakukan _request_ ke suatu _server_ sambil melampirkan _cookie_ dari pengguna tersebut untuk berpura-pura melakukan aksi atas nama pengguna tersebut.
+## 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+- Menambahkan field ```ForeignKey``` pada model ```Product``` untuk menghubungkan ```user``` ke ```Product```
+- Membuat file migrasi baru menggunakan ```./manage.py makemigrations```
+- Melakukan migrasi menggunakan ```./manage.py migrate```
+- Menambahkan views ```login_user```, ```register```, serta ```logout_user``` untuk proses autentikasi
+- Menambahkan template serta styling untuk login dan juga registrasi pengguna
+- Menambahkan views ke ```urls.py```
+- Menambahkan views increment, decrement, serta delete item
+- Memodifikasi template index.html dan menambahkan form untuk increment, decrement, serta delete item
+- Menambahkan increment, decrement, serta delete pada ```urls.py```
+- Memodifikasi views ```add_product``` agar menambahkan field ```user``` setiap kali form disubmit
+- Menambahkan decorator ```@login_required``` pada views ```show_main```, ```add_product```, serta```logout_user```
+- Memodifikasi template dan views agar menampilkan data pada pengguna (username pada banner) serta tampilan last_login.
