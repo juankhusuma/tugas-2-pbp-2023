@@ -2,13 +2,14 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, logout, login
 from django.shortcuts import redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from django.core import serializers
 from django.shortcuts import render
 from main.forms import ProductForm
 from main.models import Product
 from functools import reduce
+from django.urls import reverse
 # Create your views here.
 
 @login_required(login_url='main:login')
@@ -71,14 +72,19 @@ def login_user(request):
     context = {}
     return render(request, 'login.html', context)
 
+@login_required(login_url='main:login')
 def logout_user(request):
     logout(request)
-    return redirect('main:login')
+    response = HttpResponseRedirect(reverse('main:login'))
+    response.delete_cookie('last_login')
+    return response
 
 def add_product(request):
     form = ProductForm(request.POST or None)
     if form.is_valid() and request.method == 'POST':
-        form.save()
+        product = form.save(commit=False)
+        product.user = request.user
+        product.save()
         return index(request)
     context = {'form': form}
     return render(request, 'add_product.html', context)
