@@ -121,6 +121,14 @@ Element selector berfungsi untuk memberikan styling secara umum kepada semua ele
 Padding adalah whitespace didalam border suatu element sedangkan margin merupakan whitespace diluar border dan berada di sekeliling element
 
 ## 4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+Tailwind didesain sebagai utility framework untuk memudahkan developer untuk menambahkan styling dengan hanya menambahkan class pada suatu element tanpa ada prebuilt component sedangkan Bootstrap merupakan framework css yang didesain untuk mempermudah pembuatan component dengan berbagai prebuilt component yang sudah responsive dan siap digunakan
 
+Tailwind memberikan fleksibilitas dan styling yang lebih kompleks sehingga lebih cocok untuk proyek yang membutuhkan kostumisasi yang lebih tinggi sedangkan Bootstrap lebih baik untuk sebuah proyek yang tidak memerlukan styling dengan kostumisasi yang tinggi dan memerlukan waktu pengembangan yang cepat
 
-## 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+## 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step
+- Menambahkan konfigurasi static file pada settings.py
+- Membuat folder static untuk menampung file static css
+- Membuat file css index.css untuk memberikan styling reset yang membuang styling default css dan menambahkan styling general
+- Menbamhakan file css untuk semua page, yaitu ada index.css untuk memberikan styling pada page home dan table
+- Menambahkan styling untuk form dari django pada file create_form.css
+- Memberikan link pada html ke file css yang tepat
