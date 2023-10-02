@@ -95,3 +95,32 @@ Secara _default_ tanpa proteksi apapun, _cookies_ rentan terhadap serangan, sala
 - Memodifikasi views ```add_product``` agar menambahkan field ```user``` setiap kali form disubmit
 - Menambahkan decorator ```@login_required``` pada views ```show_main```, ```add_product```, serta```logout_user```
 - Memodifikasi template dan views agar menampilkan data pada pengguna (username pada banner) serta tampilan last_login.
+
+# Tugas 5
+## 1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya. 
+Element selector berfungsi untuk memberikan styling secara umum kepada semua element atau tag yang dipilih, umumnya digunakan untuk memberikan styling yang bersifat global kepada semua kemunculan tag atau element tersebut, misal untuk memberikan warna text pada element p atau membuang default styling pada suatu element, misal membuang underline pada link atau tag a, dan sebagainya
+
+## 2. Jelaskan HTML5 Tag yang kamu ketahui.
+- h1 - h6: untuk menampilkan heading, dengan urutan kepentingan yang berbeda-beda, h1 paling besar dan penting, h6 paling kecil dan paling kecil tingkatanya
+- p: untuk menampilkan paragraf
+- a: untuk menampilkan link
+- img: untuk menampilkan gambar
+- form: untuk membuat form
+- input: untuk menerima form input dari user
+- button: untuk menampilkan tombol
+- ul: menampilkan list yang tidak berurut
+- ol: menampilkan list yang terurut
+- li: menampilkan masing-masing item list
+- table: menampilkan tabel
+- thead: menampilkan header tabel
+- tbody: menampilkan body tabel
+- tr: menampilkan baris dari tabel
+- td: menampilkan masing-masing item dari tabel
+
+## 3. Jelaskan perbedaan antara margin dan padding.
+Padding adalah whitespace didalam border suatu element sedangkan margin merupakan whitespace diluar border dan berada di sekeliling element
+
+## 4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+
+
+## 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).

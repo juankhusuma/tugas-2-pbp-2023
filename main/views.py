@@ -85,7 +85,7 @@ def add_product(request):
         product = form.save(commit=False)
         product.user = request.user
         product.save()
-        return index(request)
+        return redirect("main:index")
     context = {'form': form}
     return render(request, 'add_product.html', context)
 

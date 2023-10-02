@@ -20,6 +20,9 @@
     margin-bottom: 25px;
 }
 
+body {
+    background: #1c1717;
+}
 
 .products table {
     color: white;
