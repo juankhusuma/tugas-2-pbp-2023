@@ -1,5 +1,5 @@
 from django.urls import path
-from main.views import index, register, delete, login_user, increment, decrement, logout_user, add_product, show_products_json, show_product_xml, show_product_json_by_id, show_product_xml_by_id
+from main.views import index, register, create_ajax, ajax_delete, delete, login_user, increment, decrement, logout_user, add_product, show_products_json, show_product_xml, show_product_json_by_id, show_product_xml_by_id
 from django.conf.urls.static import static
 from inventory_app.settings import STATIC_URL, STATIC_ROOT
 
@@ -20,4 +20,6 @@ urlpatterns = [
      path('increment/<int:id>/', increment, name='increment'),
      path('decrement/<int:id>/', decrement, name='decrement'),
      path('delete/<int:id>/', delete, name='delete'),
+     path('create-ajax', create_ajax, name='create_ajax'),
+     path('delete-ajax/<int:id>', ajax_delete, name='delete_ajax'),
 ]

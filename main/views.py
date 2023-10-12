@@ -2,7 +2,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, logout, login
 from django.shortcuts import redirect
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
 from django.contrib import messages
 from django.core import serializers
 from django.shortcuts import render
@@ -10,8 +10,10 @@ from main.forms import ProductForm
 from main.models import Product
 from functools import reduce
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
+@csrf_exempt
 @login_required(login_url='main:login')
 def increment(request, id):
     if request.method == 'POST':
@@ -20,6 +22,7 @@ def increment(request, id):
         product.save()
     return redirect('main:index')
 
+@csrf_exempt
 @login_required(login_url='main:login')
 def decrement(request, id):
     if request.method == 'POST':
@@ -28,6 +31,23 @@ def decrement(request, id):
         product.save()
     return redirect('main:index')
 
+@csrf_exempt
+def create_ajax(request):
+    if request.method == 'POST':
+        name = request.POST.get("name")
+        price = request.POST.get("price")
+        description = request.POST.get("description")
+        amount = request.POST.get("amount")
+        user = request.user
+
+        new_product = Product(name=name, price=price, amount=amount, description=description, user=user)
+        new_product.save()
+
+        return HttpResponse(new_product.pk, status=201)
+
+    return HttpResponseNotFound()
+
+@csrf_exempt
 @login_required(login_url='main:login')
 def delete(request, id):
     if request.method == 'POST':

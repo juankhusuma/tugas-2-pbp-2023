@@ -132,3 +132,25 @@ Tailwind memberikan fleksibilitas dan styling yang lebih kompleks sehingga lebih
 - Menbamhakan file css untuk semua page, yaitu ada index.css untuk memberikan styling pada page home dan table
 - Menambahkan styling untuk form dari django pada file create_form.css
 - Memberikan link pada html ke file css yang tepat
+
+# Tugas 6
+## 1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+asynchronous programming memungkinkan eksekusi beberapa proses secara bersamaan, dimana apabila suatu proses async belum selesai, maka program tidak akan menunggu program selesai, melainkan lanjut melakukan proses selanjutnya, dengan demikian proses async tidak akan menghambat proses lainya, sedangkan pada synchronous programming semua proses dilakukan beruntun satu per-satu dan program akan menunggu setiap proses untuk selesai sebelum pindah ke proses selanjutnya.
+
+## 2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+event driven programming adalah suatu paradigma pemrograman dimana suatu program disusun dalam bentuk event dan event handler, event adalah semacam notifikasi dari program untuk menandakan terjadinya suatu peristiwa pada proses berjalanya program, lalu masing-masing event tersebut dapat diberikan event handler yang merupakan sekumpulan kode yang dieksekusi apabila suatu event dikeluarkan oleh komponen tertentu.
+
+## 3. Jelaskan penerapan asynchronous programming pada AJAX.
+Pada ajax asynchronous programming diimplementasikan agar proses rendering browser tidak terhenti ketika menunggu response dari server, selain itu, dengan AJAX, kita dapat mengganti tampilan browser tanpa merusak interaktivitas dari browser
+
+## 4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+jQuery dikembangkan pada masa awal pemrograman web, dimana API modern pada browser serperti fetch dan query selector masih belum ada atau belum sempurna, namun seiiring berkembangnya teknologi web, fitur-fitur yang ditawarkan oleh jQuery sudah menjadi standar yang didukung di semua browser modern, namun tetap jQuery menawarkan kemudahan melakukan manipulasi dom dan fitur-fitur tambahan lainya, sehingga untuk proyek yang sederhana lebih cocok menggunakan fetch api, namun untuk proyek yang lebih kompleks jquery dapat memberikan kemudahan dan membantu proses pengembangan sehingga lebih baik digunakan.
+
+## 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+- menambahkan create_ajax pada views.py untuk membuat product dengan AJAX
+- memodifikasi index.html dan index.css sehingga menggunakan cards
+- menambahkan boostrap dan modal boostrap pada index.html
+- menambahkan index.js pada static
+- menambahkan kode js untuk menambahkan card secara ajax ketika file html pertama kali di render
+- menambahkan event handler untuk create product by ajax dan melakukan manipulasi dom untuk menambah item
+- melakukan perintah ```./manage.py collectstatic```

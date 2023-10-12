@@ -3,6 +3,8 @@
 {% load humanize %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/create_form.css' %}">
+<script defer src="{% static 'js/index.js' %}"></script>
 {% endblock css %}
 {% block content %}
 <ul class="products">
@@ -12,45 +14,45 @@
     <h1 class="stock">
         Total stok {{ stocks }} item
     </h1>
-    <div style="overflow-x:auto; width: 100%; max-width: 700px;">
-        <table>
-            <tr class=" products__header">
-                <th>Game</th>
-                <th>Harga</th>
-                <th>Stok</th>
-                <th>Tambahkan</th>
-                <th>Kurangi</th>
-                <th>Hapus</th>
-            </tr>
-            {% for product in products %}
-            <tr>
-                <td>{{ product.name }}</td>
-                <td>Rp.{{product.price|intcomma}}</td>
-                <td>{{ product.amount }}</td>
-                <td style="text-align: center;">
-                    <form action="/increment/{{product.pk}}/" method="post">
-                        {% csrf_token %}
-                        <input type="submit" value="+">
-                    </form>
-                </td>
-                <td style="text-align: center;">
-                    <form action="/decrement/{{product.pk}}/" method="post">
-                        {% csrf_token %}
-                        <input type="submit" value="-">
-                    </form>
-                </td>
-                <td style="text-align: center;">
-                    <form action="/delete/{{product.pk}}/" method="post">
-                        {% csrf_token %}
-                        <input style="color: red; font-weight: bold;" type="submit" value="x">
-                    </form>
-                </td>
-            </tr>
-            {% endfor %}
-        </table>
+    <div class="cards">
     </div>
-    <h1 class="stock">
-        Tanggal login: {{ last_login }}
-    </h1>
+    <button type="button" class="btn ajax-btn btn-primary" data-bs-toggle="modal" data-bs-target="#mymodal">
+        Add Product by AJAX
+    </button>
 </ul>
+<div class="modal fade" id="mymodal" tabindex="-1" aria-labelledby="MyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="MyModalLabel">Add New Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form">
+                    <div class="mb-3">
+                        <label for="name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="amount" class="col-form-label">Amount:</label>
+                        <input type="number" class="form-control" id="amount" name="amount"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="col-form-label">Price:</label>
+                        <input type="number" class="form-control" id="price" name="price"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <textarea class="form-control" id="description" name="description"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add
+                    Product</button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}
