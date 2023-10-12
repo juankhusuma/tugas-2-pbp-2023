@@ -24,9 +24,6 @@ src/node_modules
 web/media
 web/static/CACHE
 stats
-Dockerfile
-.gitignore
-Dockerfile
 db.sqlite3
 **/*.md
 logs/
