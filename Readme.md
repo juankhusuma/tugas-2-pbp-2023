@@ -1,3 +1,7 @@
+# Link Web Tugas
+[Link Deploymennt](http://juan-dharmananda-tutorial.pbp.cs.ui.ac.id)
+http://juan-dharmananda-tutorial.pbp.cs.ui.ac.id
+
 # Tugas 2
 
 ## 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
