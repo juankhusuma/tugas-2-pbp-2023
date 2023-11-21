@@ -75,6 +75,7 @@ def index(request):
     return render(request, 'index.html', context=context)
 
 
+@csrf_exempt
 def register(request):
     form = UserCreationForm()
     if request.method == "POST":
