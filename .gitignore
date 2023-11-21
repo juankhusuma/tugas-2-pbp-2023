@@ -27,3 +27,4 @@ stats
 db.sqlite3
 **/*.md
 logs/
+venv/
